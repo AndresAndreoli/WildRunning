@@ -8,6 +8,7 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
@@ -39,6 +40,23 @@ class LoginActivity : AppCompatActivity() {
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         mAuth = FirebaseAuth.getInstance()
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        val currentUser = FirebaseAuth.getInstance().currentUser
+
+        if (currentUser != null){
+            goHome(currentUser.email.toString(), currentUser.providerId)
+        }
+    }
+
+    override fun onBackPressed() { // Este codigo me permite que si voy hacia atras, se ira a la ventana de inicio
+        val startMain = Intent(Intent.ACTION_MAIN)
+        startMain.addCategory(Intent.CATEGORY_HOME)
+        startMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(startMain)
     }
 
     fun login(view: View){
@@ -89,5 +107,14 @@ class LoginActivity : AppCompatActivity() {
                 } else
                     Toast.makeText(this, "Error (Algo ha salido mal)", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    fun goTerms(view: View){
+        val intent = Intent(this, TermsActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun forgotPassword(view: View){
+        startActivity(Intent(this, ForgotPasswordActivity::class.java))
     }
 }
