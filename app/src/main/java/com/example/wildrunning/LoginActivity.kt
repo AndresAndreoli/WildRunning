@@ -7,7 +7,11 @@ import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {
@@ -17,8 +21,8 @@ class LoginActivity : AppCompatActivity() {
         lateinit var providerSession: String
     }
 
-    private var email by Delegates.notNull<String>() // Es para inidicar que no va a ser nulo
-    private var password by Delegates.notNull<String>()
+    private var email by Delegates.notNull<String>() // Es para indicar que no va a ser nulo
+    private  var password by Delegates.notNull<String>() //private lateinit var password : String
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
     private lateinit var lyTerms: LinearLayout //layout de terminis y condiceciones, para ocultarlo
@@ -67,6 +71,23 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun register(){
+        email = etEmail.text.toString()
+        password = etPassword.text.toString()
 
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this){task ->
+                if (task.isSuccessful){
+                    var dateRegister = SimpleDateFormat("dd/MM/yyyy").format(Date())
+
+                    var dbRegister = FirebaseFirestore.getInstance()
+                    dbRegister.collection("users").document(email).set(hashMapOf(
+                        "user" to email,
+                        "dateRegister" to dateRegister
+                    ))
+
+                    goHome(email, "email")
+                } else
+                    Toast.makeText(this, "Error (Algo ha salido mal)", Toast.LENGTH_SHORT).show()
+            }
     }
 }

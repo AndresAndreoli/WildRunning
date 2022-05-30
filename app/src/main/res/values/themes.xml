@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
 
         <item name="windowActionBar">false</item>  <!-- Es para sacar la barra de arriba de la aplicacion (se vera to-do nuestro diseño)-->
-
+        <item name="windowNoTitle">true</item>
 
     </style>
 </resources>
