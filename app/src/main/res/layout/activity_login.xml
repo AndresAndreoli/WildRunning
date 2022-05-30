@@ -59,6 +59,7 @@
         />
 
     <LinearLayout
+        android:id="@+id/lyTerms"
         style="@style/viewCustom"
         android:orientation="horizontal">
 
