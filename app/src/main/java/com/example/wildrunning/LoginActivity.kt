@@ -4,10 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.*
+import androidx.core.content.ContextCompat
+import androidx.core.widget.doOnTextChanged
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -40,6 +39,10 @@ class LoginActivity : AppCompatActivity() {
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         mAuth = FirebaseAuth.getInstance()
+
+        // Corrobar cada vez que se modifica la view EditText de Email
+        etEmail.doOnTextChanged { text, start, before, count ->  manageButtonLogin()}
+        etPassword.doOnTextChanged { text, start, before, count ->  manageButtonLogin()}
     }
 
     override fun onStart() {
@@ -57,6 +60,20 @@ class LoginActivity : AppCompatActivity() {
         startMain.addCategory(Intent.CATEGORY_HOME)
         startMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(startMain)
+    }
+
+    private fun manageButtonLogin(){
+        var btnLogin = findViewById<Button>(R.id.btnLogin)
+        email = etEmail.text.toString()
+        password = etPassword.text.toString()
+
+        if (password.isEmpty() || !ValidateEmail.isEmail(email)){
+            btnLogin.setBackgroundColor(ContextCompat.getColor(this, R.color.gray))
+            btnLogin.isEnabled = false
+        } else {
+            btnLogin.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
+            btnLogin.isEnabled = true
+        }
     }
 
     fun login(view: View){
