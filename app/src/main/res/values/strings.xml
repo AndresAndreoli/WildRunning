@@ -13,4 +13,9 @@
 
     <string name="google">GOOGLE</string>
     <string name="facebook">FACEBOOK</string>
+
+    <string name="termsTitle">Terminos y Condiciones de uso</string>
+    <string name="termsContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus convallis metus at pretium. Vivamus at lacinia leo. Praesent velit elit, suscipit sit amet pulvinar id, imperdiet ac massa. Quisque molestie lectus rhoncus urna tempor, ut lacinia mi tempor. Praesent volutpat, ligula eget lobortis cursus, mauris libero consequat ligula, nec scelerisque erat ipsum tempor justo. Aliquam ornare faucibus augue vel faucibus. Ut sollicitudin commodo tortor eu faucibus. Vestibulum lacinia ligula sed tortor auctor, vitae sollicitudin lorem dapibus. Phasellus sed tincidunt odio.</string>
+
+    <string name="putEmail">Ingrese Email:</string>
 </resources>
