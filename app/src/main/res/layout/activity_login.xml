@@ -105,7 +105,8 @@
         android:textAlignment="textStart"
         android:drawableLeft="@drawable/google"
         android:textColor="@color/black"
-        android:backgroundTint="@color/white"/>
+        android:backgroundTint="@color/white"
+        android:onClick="callSignInGoogle"/>
 
     <Button
         android:id="@+id/btnSignFacebook"

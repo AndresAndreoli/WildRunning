@@ -134,4 +134,12 @@ class LoginActivity : AppCompatActivity() {
     fun forgotPassword(view: View){
         startActivity(Intent(this, ForgotPasswordActivity::class.java))
     }
+
+    fun callSignInGoogle(view: View){
+        signInGoogle()
+    }
+
+    private fun signInGoogle(){
+
+    }
 }
