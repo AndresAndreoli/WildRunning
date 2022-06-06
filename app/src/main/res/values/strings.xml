@@ -30,10 +30,22 @@
 
     <string name="level">Nivel</string>
     <string name="user">andresandreoli@hotmail.com</string>
-    <string name="nav_hi">Let's go</string>
+    <string name="nav_hi">Lets go</string>
 
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
 
     <string name="bar_title_record">Registros</string>
+
+    <string name="orderby_dateZA">Fecha (Recientes primero)</string>
+    <string name="orderby_durationZA">Duracion(Mayores primero)</string>
+    <string name="orderby_distanceZA">Distancia(Mayores primero)</string>
+    <string name="orderby_avgspeedZA">Vel. Prom.(Mayores primero)</string>
+    <string name="orderby_maxspeedZA">Vel. Max. (Mayores primero)</string>
+
+    <string name="orderby_dateAZ">Fecha (Antiguos primero)</string>
+    <string name="orderby_durationAZ">Duracion (Menores primero)</string>
+    <string name="orderby_distanceAZ">Distancia (Menores primero)</string>
+    <string name="orderby_avgspeedAZ">Vel. Prom. (Menores primero)</string>
+    <string name="orderby_maxspeedAZ">Vel. Max. (Menores primero)</string>
 </resources>

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecordActivity"
     android:orientation="vertical"
     android:background="@color/white">
 
@@ -21,69 +18,63 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/gray_dark"
             app:titleTextColor="@color/white"
-            app:layout_scrollFlags="scroll|enterAlways"/>
+            app:layout_scrollFlags="scroll|enterAlways" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/gray_dark">
-
         <LinearLayout
             android:id="@+id/lySports"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center"
             android:background="@color/gray_light">
-
-            <!-- El weight es para determinar el peso (el ancho) que va a ocupar-->
             <ImageView
                 android:id="@+id/ivBike"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight=".3"
+                android:layout_height="wrap_content"
                 android:src="@mipmap/bike"
                 android:background="@color/gray_medium"
                 android:onClick="loadRunsBike"/>
-
             <ImageView
                 android:id="@+id/ivRollerSkate"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight=".3"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
+                android:layout_height="wrap_content"
                 android:src="@mipmap/rollerskate"
                 android:background="@color/gray_medium"
                 android:onClick="loadRunsRollerSkate"/>
-
             <ImageView
                 android:id="@+id/ivRunning"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight=".3"
+                android:layout_height="wrap_content"
                 android:src="@mipmap/running"
                 android:background="@color/orange"
-                android:onClick="loadRunning"/>
+                android:onClick="loadRunsRunning"/>
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/rlRecyclers"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/gray_dark">
+            android:layout_height="match_parent"
+            android:background="@color/gray_light">
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvRecords"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"/>
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp">
+            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
-
     </LinearLayout>
 
-    <!-- La | es para indicar que tiene mas de 1 valor el atributo -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbHome"
         android:layout_width="60dp"
@@ -91,10 +82,11 @@
         android:layout_gravity="end|bottom"
         android:layout_marginRight="10dp"
         android:backgroundTint="@color/salmon_dark"
-        android:onClick="fbHome"
+        android:onClick="callHome"
         android:src="@drawable/camino"
-        android:translationX="20dp"
+        android:translationX="-20dp"
         android:translationY="-90dp"
-        app:maxImageSize="50dp"/>
+        app:maxImageSize="50dp" />
+
 
 </LinearLayout>
