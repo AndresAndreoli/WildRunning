@@ -35,19 +35,20 @@
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/viewCustom"
+        app:boxStrokeColor="@color/white"
+        app:counterTextColor="@color/white"
         app:endIconMode="password_toggle"
-        app:passwordToggleTint="@color/white"
-        app:counterTextColor="@color/white">
+        app:passwordToggleTint="@color/white">
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:backgroundTint="@color/gray_dark"
             android:hint="@string/password"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
             android:inputType="textPassword"
-            android:backgroundTint="@color/gray_dark"/>
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,6 +121,7 @@
         android:textAlignment="textStart"
         android:drawableLeft="@drawable/facebook"
         android:textColor="@color/black"
-        android:backgroundTint="@color/white"/>
+        android:backgroundTint="@color/white"
+        android:onClick="callSignInFacebook"/>
 
 </LinearLayout>

@@ -18,4 +18,22 @@
     <string name="termsContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus convallis metus at pretium. Vivamus at lacinia leo. Praesent velit elit, suscipit sit amet pulvinar id, imperdiet ac massa. Quisque molestie lectus rhoncus urna tempor, ut lacinia mi tempor. Praesent volutpat, ligula eget lobortis cursus, mauris libero consequat ligula, nec scelerisque erat ipsum tempor justo. Aliquam ornare faucibus augue vel faucibus. Ut sollicitudin commodo tortor eu faucibus. Vestibulum lacinia ligula sed tortor auctor, vitae sollicitudin lorem dapibus. Phasellus sed tincidunt odio.</string>
 
     <string name="putEmail">Ingrese Email:</string>
+
+    <string name="bar_title">WildRunning</string>
+
+    <string name="menu_running">Running</string>
+    <string name="menu_record">Historial</string>
+    <string name="menu_becamepremium">Hacerse Premium</string>
+    <string name="menu_clearpreferences">Reestablecer Ajustes</string>
+    <string name="menu_signOut">Cerrar Sesion</string>
+    <string name="menu_offercourse">Quieres aprender a desarrollar apps?</string>
+
+    <string name="level">Nivel</string>
+    <string name="user">andresandreoli@hotmail.com</string>
+    <string name="nav_hi">Let's go</string>
+
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+
+    <string name="bar_title_record">Registros</string>
 </resources>

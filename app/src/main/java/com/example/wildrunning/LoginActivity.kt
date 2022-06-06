@@ -147,6 +147,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun signInGoogle(){
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -155,8 +156,7 @@ class LoginActivity : AppCompatActivity() {
         var mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         mGoogleSignInClient.signOut()
 
-        val signInIntent = mGoogleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RESULT_CODE_GOOGLE_SIGN_IN)
+        startActivityForResult(mGoogleSignInClient.signInIntent, RESULT_CODE_GOOGLE_SIGN_IN)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -173,13 +173,12 @@ class LoginActivity : AppCompatActivity() {
                     // SignIn
                     mAuth.signInWithCredential(credential)
                         .addOnCompleteListener{ task ->
-                            if (task.isSuccessful)
+                            if (task.isSuccessful){
                                 goHome(email, "Google")
-                            else
+                            } else
                                 Toast.makeText(this, "Error en la conexion con Google", Toast.LENGTH_SHORT).show()
                         }
                 }
-
             } catch (e: ApiException) {
                 Toast.makeText(this, "Error en la conexion con Google", Toast.LENGTH_SHORT).show()
             }
