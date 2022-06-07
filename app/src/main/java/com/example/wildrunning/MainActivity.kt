@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
 
+        // Hago un inflate de los datos del usuario de sus carreras al menu
         var headerView: View = LayoutInflater.from(this).inflate(R.layout.nav_header_main, navigationView, false)
         navigationView.removeHeaderView(headerView)
         navigationView.addHeaderView(headerView)
